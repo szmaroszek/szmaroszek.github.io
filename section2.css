@@ -355,7 +355,7 @@
 button{
     position: relative;
     font-family: 'Montserrat', sans-serif;
-    width: 30%;
+    width: 50%;
     height: 35px;
     border-radius: 7px;
     margin-top: 10px;
@@ -499,5 +499,13 @@ a:focus {
 @media (max-height: 695px){
     .iphone-mockup{
         display: none;
+    }
+    .mac-mockup{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: auto;
+        width: 100%;
     }
 }
