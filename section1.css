@@ -421,7 +421,7 @@ img {
 #bottom-text{
   font-size: 30px;
   text-align: center;
-  z-index: '2';
+  z-index: 2;
   transform: translate3d(0,0,1175px);/*safari 3d fix*/
 }
 #desc{

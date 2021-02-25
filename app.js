@@ -20,10 +20,6 @@
       };
   }());
 
-
-
-
-
 var example = ['effective.', 'intuitive.', 'playful.', 'creative.', 'inspiring.','beautiful.','engaging.'];
 
 function textSequence(i) {
@@ -41,7 +37,6 @@ function textSequence(i) {
     }
 
 }
-
 
 const scratch = document.querySelector('#scratch');
 const section1 = document.querySelector('#section1');
@@ -74,7 +69,6 @@ const close = document.getElementsByClassName('close');
 const line1 = document.getElementsByClassName('line-1');
 const line2 = document.getElementsByClassName('line-2');
 
-
 const more = document.getElementsByClassName('more');
 const arrow = document.getElementsByClassName('arrow');
 const soonTxt = document.getElementsByClassName('soon-txt')
@@ -86,8 +80,6 @@ body.addEventListener('mousemove', (e) => {
   cursor.style.left = x + 'px';
   cursor.style.top = y + 'px';
 })
-
-
 
 for (var i = 0; i < workRectangle.length; i++) {
   close[i].addEventListener('mouseenter', () => {
@@ -188,7 +180,8 @@ document.getElementById('replay').addEventListener('click', (e) => {
   gsap.to('#svgmessage',{
       scrollTrigger: {
       trigger: '#section2',
-      toggleActions: "restart none none reverse",
+      toggleActions: "restart none restart reverse",
+      end: "+=6500"
     },
     opacity: '1',
   })

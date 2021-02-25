@@ -221,7 +221,6 @@
             </div>
         </div>
 
-
     </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.js"></script>
@@ -241,331 +240,170 @@
                 revealPercent = 40,
                 techSvg = document.getElementsByClassName('tech-svg'),
 
-
-
                 overlayImgUrl1 = "static/profile_pictures/violet_white.png",
                 overlayImgUrl2 = "static/profile_pictures/yellow_blue.png",
                 overlayImgUrl3 = "static/profile_pictures/yellow_pink_reverse.png",
                 overlayImgUrl4 = "static/profile_pictures/lavender_grey.png",
                 overlayImgUrl5 = "static/profile_pictures/brown_blue.png"
-            // event handler that fades out the overlay once 50% of it has been removed
+            
+
+            function paleteChange(backgroundColor, mainColor, textColor, minorTextColor, svgBorderColor, cursorColor, circleColor){
+                setTimeout(() => {
+                    document.getElementsByTagName('canvas')[0].style.opacity = '0';
+                    document.getElementsByTagName('canvas')[0].remove();
+
+                    for (var i = 0; i < document.getElementsByClassName('svg-border').length; i++) {
+                        document.getElementsByClassName('svg-border')[i].style.stroke = svgBorderColor;
+                    }
+                    for (var i = 0; i < document.getElementsByClassName('works-date').length; i++) {
+                        document.getElementsByClassName('works-date')[i].style.color = minorTextColor;
+                    }
+                    for (var i = 0; i < document.getElementsByClassName('works-title').length; i++) {
+                        document.getElementsByClassName('works-title')[i].style.color = minorTextColor;
+                    }
+                    for (var i = 0; i < document.getElementsByClassName('bar1').length; i++) {
+                        document.getElementsByClassName('bar1')[i].style.borderColor = minorTextColor;
+                    }
+                    for (var i = 0; i < document.getElementsByClassName('bar2').length; i++) {
+                        document.getElementsByClassName('bar2')[i].style.borderColor = minorTextColor;
+                    }
+                    for (var i = 0; i < document.getElementsByClassName('close').length; i++) {
+                        document.getElementsByClassName('close')[i].style.borderColor = minorTextColor;
+                    }
+                    for (var i = 0; i < document.getElementsByClassName('line-1').length; i++) {
+                        document.getElementsByClassName('line-1')[i].style.borderColor = minorTextColor;
+                    }
+                    for (var i = 0; i < document.getElementsByClassName('line-2').length; i++) {
+                        document.getElementsByClassName('line-2')[i].style.borderColor = minorTextColor;
+                    }
+                    for (var i = 0; i < document.getElementsByClassName('more').length; i++) {
+                        document.getElementsByClassName('more')[i].style.borderColor = minorTextColor;
+                    }
+                    for (var i = 0; i < document.getElementsByClassName('arrow').length; i++) {
+                        document.getElementsByClassName('arrow')[i].style.borderColor = minorTextColor;
+                    }
+                    for (var i = 0; i < document.getElementsByClassName('work-rectangle').length; i++) {
+                        document.getElementsByClassName('work-rectangle')[i].style.backgroundColor = mainColor;
+                    }
+                    for (var i = 0; i < techSvg.length; i++) {
+                        techSvg[i].style.fill = mainColor;
+                    }
+                    for (var i = 0; i < soonTxt.length; i++) {
+                        soonTxt[i].style.color = mainColor;
+                    }
+
+                    document.getElementById('cursor').style.border = `2px solid ${cursorColor}`;
+
+                    document.getElementById('body').style.backgroundColor = backgroundColor;
+
+                    document.getElementById('section1').style.backgroundColor = backgroundColor;
+                    document.getElementById('maroszek').style.color = textColor;
+                    document.getElementById('temp-p').style.color = textColor;
+                    document.getElementById('bar').style.borderColor = textColor;
+                    document.getElementById('top-text').style.color = textColor;
+                    document.getElementById('bottom-text').style.color = textColor;
+                    document.getElementById('circle').style.backgroundColor = circleColor;
+                    document.getElementById('desc').style.color = mainColor;
+
+                    document.getElementById('page').style.backgroundColor = backgroundColor;
+
+                    document.getElementById('section2').style.backgroundColor = backgroundColor;
+                    document.getElementById('technologies').style.color = textColor;
+                    document.getElementById('works').style.color = textColor;
+                    
+                    document.getElementById('section4').style.backgroundColor = backgroundColor;
+                    
+                    document.getElementById('get-in-toutch').style.backgroundColor = mainColor;
+                    document.getElementById('section4').style.color = minorTextColor;
+                    }, 20); 
+            }
             
             function firstReveal(){
+                containerEl.classList = 'revealed'
                 textSequence(0);
                 onReveal();
             }
 
             function onReveal(){
                 setTimeout(() => {
-                    containerEl.classList = 'revealed'
-                    document.getElementById('cursor').style.border = '2px solid #0B090A';
-                    document.getElementsByTagName('canvas')[0].style.opacity = '0';
-                    document.getElementsByTagName('canvas')[0].remove();
-
-                    document.getElementById('technologies').style.color = '#0B090A';
-                    document.getElementById('works').style.color = '#0B090A';
-                    
-                    document.getElementById('section4').style.color = '#fff';
-
-                    for (var i = 0; i < document.getElementsByClassName('svg-border').length; i++) {
-                        document.getElementsByClassName('svg-border')[i].style.stroke = '#0B090A';
-                    }
-                    for (var i = 0; i < document.getElementsByClassName('works-date').length; i++) {
-                        document.getElementsByClassName('works-date')[i].style.color = '#fff';
-                    }
-
-                    for (var i = 0; i < document.getElementsByClassName('works-title').length; i++) {
-                        document.getElementsByClassName('works-title')[i].style.color = '#fff';
-                    }
-                    for (var i = 0; i < document.getElementsByClassName('bar1').length; i++) {
-                        document.getElementsByClassName('bar1')[i].style.borderColor = '#fff';
-                    }
-                    for (var i = 0; i < document.getElementsByClassName('bar2').length; i++) {
-                        document.getElementsByClassName('bar2')[i].style.borderColor = '#fff';
-                    }
-                    for (var i = 0; i < document.getElementsByClassName('close').length; i++) {
-                        document.getElementsByClassName('close')[i].style.borderColor = '#fff';
-                    }
-                    for (var i = 0; i < document.getElementsByClassName('line-1').length; i++) {
-                        document.getElementsByClassName('line-1')[i].style.borderColor = '#fff';
-                    }
-                    for (var i = 0; i < document.getElementsByClassName('line-2').length; i++) {
-                        document.getElementsByClassName('line-2')[i].style.borderColor = '#fff';
-                    }
-                    for (var i = 0; i < document.getElementsByClassName('more').length; i++) {
-                        document.getElementsByClassName('more')[i].style.borderColor = '#fff';
-                    }
-                    for (var i = 0; i < document.getElementsByClassName('arrow').length; i++) {
-                        document.getElementsByClassName('arrow')[i].style.borderColor = '#fff';
-                    }
-
-                    document.getElementById('violet-white-profile-pic').style.opacity = '0';
-                    document.getElementById('profile-pic1').style.opacity = '1';
-
-                    document.getElementById('maroszek').style.color = '#0B090A';
-                    document.getElementById('temp-p').style.color = '#0B090A';
-                    document.getElementById('bar').style.borderColor = '#0B090A';
-
-                    document.getElementById('body').style.backgroundColor = '#ffffff';
-
-                    document.getElementById('section1').style.backgroundColor = '#ffffff';
-
-                    document.getElementById('page').style.backgroundColor = '#ffffff';
-                    document.getElementById('section2').style.backgroundColor = '#ffffff';
-                    document.getElementById('section4').style.backgroundColor = '#ffffff';
-
-                    document.getElementById('top-text').style.color = '#0B090A';
 
                     document.getElementById('bottom-text').style.opacity = '1';
                     document.getElementById('bottom-text').style.transform = 'translateX(0px)';
-                    document.getElementById('bottom-text').style.color = '#0B090A';
 
-                    document.getElementById('circle').style.backgroundColor = 'rgba(36, 0, 70 , .3)';
-                    document.getElementById('circle').style.transform = 'translateX(0px)'
+                    document.getElementById('circle').style.transform = 'translateX(0px)';
 
                     document.getElementById('icon-scroll').style.opacity = '1';
 
-                    document.querySelector('body').style.overflowY = 'auto';
-
-                    document.getElementById('desc').style.color = '#240046';
                     document.getElementById('desc').style.opacity = '1';
-
-                    document.getElementById('rectangle-1').style.backgroundColor = '#240046';
-                    document.getElementById('rectangle-2').style.backgroundColor = '#240046';
-                    document.getElementById('rectangle-3').style.backgroundColor = '#240046';
-                    document.getElementById('rectangle-4').style.backgroundColor = '#240046';
                     
-                    for (var i = 0; i < techSvg.length; i++) {
-                        techSvg[i].style.fill = '#240046';
-                    }
-
                     document.getElementById('liquid-contact').style.opacity = '.8';
                     document.getElementById('liquid-contact').style.pointerEvents = 'auto';
 
-                    document.getElementById('get-in-toutch').style.backgroundColor = '#240046';
-
                     document.getElementById('keep-scr').style.opacity = '1';
 
-                    for (var i = 0; i < soonTxt.length; i++) {
-                        soonTxt[i].style.color = '#240046';
-                    }
+                    document.getElementById('violet-white-profile-pic').style.opacity = '0';
+                    document.getElementById('profile-pic1').style.opacity = '1';
+                }, 20); 
 
-                }, 20);   
-
-                    ScratchIt(containerEl, overlayImgUrl1, brushImgUrl, onReveal1, revealPercent);
+                paleteChange('#ffffff', '#240046', '#0B090A', '#ffffff', '#0B090A', '#0B090A', 'rgba(36, 0, 70 , .3)');
+                ScratchIt(containerEl, overlayImgUrl1, brushImgUrl, onReveal1, revealPercent);
                
-                    if(window.navigator.userAgent.indexOf("Edge") > -1){
+                if(window.navigator.userAgent.indexOf("Edge") > -1){
                     document.getElementsByTagName('canvas')[0].style.width = '100%';
                 }
-                }
+            }
 
-                function onReveal1(){
-                    setTimeout(() => {
-                    document.getElementsByTagName('canvas')[0].style.opacity = '0';
-                    document.getElementsByTagName('canvas')[0].remove();
+            function onReveal1(){
+                setTimeout(() => {
                     document.getElementById('profile-pic1').style.opacity = '0';
                     document.getElementById('profile-pic2').style.opacity = '1';
-
-                    document.getElementById('body').style.backgroundColor = '#ffa400';
-                    
-                    document.getElementById('section1').style.backgroundColor = '#ffa400';
-
-                    document.getElementById('page').style.backgroundColor = '#ffa400';
-                    document.getElementById('section2').style.backgroundColor = '#ffa400';
-                    document.getElementById('section4').style.backgroundColor = '#ffa400';
-
-                    document.getElementById('circle').style.backgroundColor = 'rgba(0, 159, 253 , .3)';
-
-                    document.getElementById('desc').style.color = '#009FFD';
-                    
-                    document.getElementById('rectangle-1').style.backgroundColor = '#009FFD';
-                    document.getElementById('rectangle-2').style.backgroundColor = '#009FFD';
-                    document.getElementById('rectangle-3').style.backgroundColor = '#009FFD';
-                    document.getElementById('rectangle-4').style.backgroundColor = '#009FFD';
-
-                    for (var i = 0; i < techSvg.length; i++) {
-                        techSvg[i].style.fill = '#009FFD';
-                    }
-
-                    document.getElementById('get-in-toutch').style.backgroundColor = '#009FFD';
-                    for (var i = 0; i < soonTxt.length; i++) {
-                        soonTxt[i].style.color = '#009FFD';
-                    }
-                    
-                    
                 }, 20);   
-                    ScratchIt(containerEl, overlayImgUrl2, brushImgUrl, onReveal2, revealPercent);
+
+                paleteChange('#ffa400', '#009FFD', '#0B090A', '#ffffff', '#0B090A', '#0B090A', 'rgba(0, 159, 253 , .3)');
+                ScratchIt(containerEl, overlayImgUrl2, brushImgUrl, onReveal2, revealPercent);
+                if(window.navigator.userAgent.indexOf("Edge") > -1){
+                    document.getElementsByTagName('canvas')[0].style.width = '100%';
                 }
-                function onReveal2(){
-                    setTimeout(() => {
-                    document.getElementsByTagName('canvas')[0].style.opacity = '0';
-                    document.getElementsByTagName('canvas')[0].remove();
+            }
+
+            function onReveal2(){
+                setTimeout(() => {
                     document.getElementById('profile-pic2').style.opacity = '0';
                     document.getElementById('profile-pic3').style.opacity = '1';
-
-                    document.getElementById('body').style.backgroundColor = '#dfb2f4';
-
-                    document.getElementById('section1').style.backgroundColor = '#dfb2f4';
-
-                    document.getElementById('page').style.backgroundColor = '#dfb2f4';
-                    document.getElementById('section2').style.backgroundColor = '#dfb2f4';
-                    document.getElementById('section4').style.backgroundColor = '#dfb2f4';
-                    
-                    document.getElementById('circle').style.backgroundColor = 'rgba(245, 233, 96 , .3)';
-
-                    document.getElementById('desc').style.color = '#F5E960';
-
-                    document.getElementById('rectangle-1').style.backgroundColor = '#F5E960';
-                    document.getElementById('rectangle-2').style.backgroundColor = '#F5E960';
-                    document.getElementById('rectangle-3').style.backgroundColor = '#F5E960';
-                    document.getElementById('rectangle-4').style.backgroundColor = '#F5E960';
-
-                    for (var i = 0; i < techSvg.length; i++) {
-                        techSvg[i].style.fill = '#F5E960';
-                    }
-
-                    document.getElementById('get-in-toutch').style.backgroundColor = '#F5E960';
-
-                    document.getElementById('section4').style.color = '#0B090A';
-
-                    for (var i = 0; i < document.getElementsByClassName('works-date').length; i++) {
-                        document.getElementsByClassName('works-date')[i].style.color = '#0B090A';
-                    }
-
-                    for (var i = 0; i < document.getElementsByClassName('works-title').length; i++) {
-                        document.getElementsByClassName('works-title')[i].style.color = '#0B090A';
-                    }
-                    for (var i = 0; i < document.getElementsByClassName('bar1').length; i++) {
-                        document.getElementsByClassName('bar1')[i].style.borderColor = '#0B090A';
-                    }
-                    for (var i = 0; i < document.getElementsByClassName('bar2').length; i++) {
-                        document.getElementsByClassName('bar2')[i].style.borderColor = '#0B090A';
-                    }
-                    for (var i = 0; i < document.getElementsByClassName('close').length; i++) {
-                        document.getElementsByClassName('close')[i].style.borderColor = '#0B090A';
-                    }
-                    for (var i = 0; i < document.getElementsByClassName('line-1').length; i++) {
-                        document.getElementsByClassName('line-1')[i].style.borderColor = '#0B090A';
-                    }
-                    for (var i = 0; i < document.getElementsByClassName('line-2').length; i++) {
-                        document.getElementsByClassName('line-2')[i].style.borderColor = '#0B090A';
-                    }
-                    for (var i = 0; i < document.getElementsByClassName('more').length; i++) {
-                        document.getElementsByClassName('more')[i].style.borderColor = '#0B090A';
-                    }
-                    for (var i = 0; i < document.getElementsByClassName('arrow').length; i++) {
-                        document.getElementsByClassName('arrow')[i].style.borderColor = '#0B090A';
-                    }
-
-                    for (var i = 0; i < soonTxt.length; i++) {
-                        soonTxt[i].style.color = '#F5E960';
-                    }
                 }, 20);   
+                
+                paleteChange('#dfb2f4', '#F5E960', '#0B090A', '#0B090A', '#0B090A', '#0B090A', 'rgba(245, 233, 96 , .3)');
                 ScratchIt(containerEl, overlayImgUrl3, brushImgUrl, onReveal3, revealPercent);
+                if(window.navigator.userAgent.indexOf("Edge") > -1){
+                    document.getElementsByTagName('canvas')[0].style.width = '100%';
                 }
-                function onReveal3(){
-                    setTimeout(() => {
-                    document.getElementsByTagName('canvas')[0].style.opacity = '0';
-                    document.getElementsByTagName('canvas')[0].remove();
+            }
+
+            function onReveal3(){
+                setTimeout(() => {
                     document.getElementById('profile-pic3').style.opacity = '0';
                     document.getElementById('profile-pic4').style.opacity = '1';
-
-                    document.getElementById('body').style.backgroundColor = '#e9d2f4';
-
-                    document.getElementById('section1').style.backgroundColor = '#e9d2f4';
-                    
-                    document.getElementById('page').style.backgroundColor = '#e9d2f4';
-                    document.getElementById('section2').style.backgroundColor = '#e9d2f4';
-                    document.getElementById('section4').style.backgroundColor = '#e9d2f4';
-
-                    document.getElementById('circle').style.backgroundColor = 'rgba(155, 155, 147 , .3)';
-
-                    document.getElementById('desc').style.color = '#9B9B93';
-
-                    document.getElementById('rectangle-1').style.backgroundColor = '#9B9B93';
-                    document.getElementById('rectangle-2').style.backgroundColor = '#9B9B93';
-                    document.getElementById('rectangle-3').style.backgroundColor = '#9B9B93';
-                    document.getElementById('rectangle-4').style.backgroundColor = '#9B9B93';
-
-                    for (var i = 0; i < techSvg.length; i++) {
-                        techSvg[i].style.fill = '#9B9B93';
-                    }
-
-                    document.getElementById('get-in-toutch').style.backgroundColor = '#9B9B93';
-
-                    document.getElementById('section4').style.color = '#fff';
-
-                    for (var i = 0; i < document.getElementsByClassName('works-date').length; i++) {
-                        document.getElementsByClassName('works-date')[i].style.color = '#fff';
-                    }
-
-                    for (var i = 0; i < document.getElementsByClassName('works-title').length; i++) {
-                        document.getElementsByClassName('works-title')[i].style.color = '#fff';
-                    }
-                    for (var i = 0; i < document.getElementsByClassName('bar1').length; i++) {
-                        document.getElementsByClassName('bar1')[i].style.borderColor = '#fff';
-                    }
-                    for (var i = 0; i < document.getElementsByClassName('bar2').length; i++) {
-                        document.getElementsByClassName('bar2')[i].style.borderColor = '#fff';
-                    }
-                    for (var i = 0; i < document.getElementsByClassName('close').length; i++) {
-                        document.getElementsByClassName('close')[i].style.borderColor = '#fff';
-                    }
-                    for (var i = 0; i < document.getElementsByClassName('line-1').length; i++) {
-                        document.getElementsByClassName('line-1')[i].style.borderColor = '#fff';
-                    }
-                    for (var i = 0; i < document.getElementsByClassName('line-2').length; i++) {
-                        document.getElementsByClassName('line-2')[i].style.borderColor = '#fff';
-                    }
-                    for (var i = 0; i < document.getElementsByClassName('more').length; i++) {
-                        document.getElementsByClassName('more')[i].style.borderColor = '#fff';
-                    }
-                    for (var i = 0; i < document.getElementsByClassName('arrow').length; i++) {
-                        document.getElementsByClassName('arrow')[i].style.borderColor = '#fff';
-                    }
-
-                    for (var i = 0; i < soonTxt.length; i++) {
-                        soonTxt[i].style.color = '#9B9B93';
-                    }
                 }, 20);   
+                
+                paleteChange('#e9d2f4', '#9B9B93', '#0B090A', '#ffffff', '#0B090A', '#0B090A', 'rgba(155, 155, 147 , .3)');
                 ScratchIt(containerEl, overlayImgUrl4, brushImgUrl, onReveal4, revealPercent);
+                if(window.navigator.userAgent.indexOf("Edge") > -1){
+                    document.getElementsByTagName('canvas')[0].style.width = '100%';
                 }
-                function onReveal4(){
-                    setTimeout(() => {
-                    document.getElementsByTagName('canvas')[0].style.opacity = '0';
-                    document.getElementsByTagName('canvas')[0].remove();
+            }
+
+            function onReveal4(){
+                setTimeout(() => {
                     document.getElementById('profile-pic4').style.opacity = '0';
                     document.getElementById('violet-white-profile-pic').style.opacity = '1';
-
-                    document.getElementById('body').style.backgroundColor = '#5296a5';
-
-                    document.getElementById('section1').style.backgroundColor = '#5296a5';
-
-                    document.getElementById('page').style.backgroundColor = '#5296a5';
-                    document.getElementById('section2').style.backgroundColor = '#5296a5';
-                    document.getElementById('section4').style.backgroundColor = '#5296a5';
-
-                    document.getElementById('circle').style.backgroundColor = 'rgba(165, 117, 72 , .3)';
-
-                    document.getElementById('desc').style.color = '#A57548';
-
-                    document.getElementById('rectangle-1').style.backgroundColor = '#A57548';
-                    document.getElementById('rectangle-2').style.backgroundColor = '#A57548';
-                    document.getElementById('rectangle-3').style.backgroundColor = '#A57548';
-                    document.getElementById('rectangle-4').style.backgroundColor = '#A57548';
-
-                    for (var i = 0; i < techSvg.length; i++) {
-                        techSvg[i].style.fill = '#A57548';
-                    }
-                    
-                    document.getElementById('get-in-toutch').style.backgroundColor = '#A57548';
-                    for (var i = 0; i < soonTxt.length; i++) {
-                        soonTxt[i].style.color = '#A57548';
-                    }
                 }, 20);   
-                ScratchIt(containerEl, overlayImgUrl5, brushImgUrl, onReveal, revealPercent);
-                }
                 
+                paleteChange('#5296a5', '#A57548', '#0B090A', '#ffffff', '#0B090A', '#0B090A', 'rgba(165, 117, 72 , .3)');
+                ScratchIt(containerEl, overlayImgUrl5, brushImgUrl, onReveal, revealPercent);
+                if(window.navigator.userAgent.indexOf("Edge") > -1){
+                    document.getElementsByTagName('canvas')[0].style.width = '100%';
+                }
+            }
 
             if(ScratchIt.isSupported()){
                 document.getElementById('violet-white-profile-pic').style.opacity = '1';
@@ -578,8 +416,6 @@
           
             let check = gsap.timeline({paused:true});
             let uncheck = gsap.timeline({paused:true});
-
-
 
             check.set('.ring', {opacity:1});
             check.set('.drop', {opacity:0, y:-32, scale:.4, x:0, transformOrigin:"50%, 0%"});
@@ -597,13 +433,11 @@
             check.to('.ring', 1.6, {transformOrigin:"50%, 50%", scaleY:1, ease:Elastic.easeOut.config(.8, .1)}, 'sync +=.14');
             check.to('.drop', 1.4, {transformOrigin:"50%, 10%", scale:1, ease:Elastic.easeOut.config(.8, .14)}, 'sync +=.14');
             
-            
             uncheck.to('.drop', .075, {scale:.9, ease:Power1.easeNone});
             uncheck.to('.drop', .16, { y:-32, ease:Power1.easeIn});
             uncheck.to('.drop', .2, {scale:.3, ease:Power1.easeNone});
             uncheck.to('.drop', .1, {opacity:0, y:-45, ease:Power1.easeIn});
             uncheck.to('.liquid-contact-text', .2, {fontSize:"20px"});
-
 
             function contactMouseOver(){
                 cursor.style.height = '65px';
@@ -612,7 +446,6 @@
                 check.play(0);
             }
 
-            
             function contactMouseOut(){
                 cursor.style.height = '40px';
                 cursor.style.width = '40px';
@@ -621,6 +454,5 @@
             }
 
       </script>
-
 </body>
 </html>
