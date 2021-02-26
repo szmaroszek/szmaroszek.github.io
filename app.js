@@ -30,9 +30,9 @@ function textSequence(i) {
             document.getElementById('desc').innerHTML = example[i];
             textSequence(++i);
             
-        }, 1500); // 1 second (in milliseconds)
+        }, 1500);
 
-    } else if (example.length == i) { // Loop
+    } else if (example.length == i) {
         textSequence(0);
     }
 
@@ -71,7 +71,9 @@ const line2 = document.getElementsByClassName('line-2');
 
 const more = document.getElementsByClassName('more');
 const arrow = document.getElementsByClassName('arrow');
-const soonTxt = document.getElementsByClassName('soon-txt')
+const soonTxt = document.getElementsByClassName('soon-txt');
+const btn = document.getElementById('my-form-button');
+const socials = document.getElementById('socials').getElementsByTagName('a');
 var currentRectangle=4;
 
 body.addEventListener('mousemove', (e) => {
@@ -130,6 +132,26 @@ document.getElementById('replay').addEventListener('mouseleave', (e) => {
   cursor.style.height = '40px';
   cursor.style.width = '40px';
 });
+
+btn.addEventListener('mouseenter', (e) => {
+  cursor.style.height = '65px';
+  cursor.style.width = '65px';
+});
+btn.addEventListener('mouseleave', (e) => {
+  cursor.style.height = '40px';
+  cursor.style.width = '40px';
+});
+
+for (var i = 0; i < socials.length; i++) {
+  socials[i].addEventListener('mouseenter', () => {
+    cursor.style.height = '65px';
+    cursor.style.width = '65px';
+  });
+  socials[i].addEventListener('mouseleave', () => {
+    cursor.style.height = '40px';
+    cursor.style.width = '40px';
+  });
+}
 
 document.getElementById('replay').addEventListener('click', (e) => {
   currentRectangle=4;
@@ -245,14 +267,12 @@ gsap.to('#replay', 0.5,{
   
 })
 
-
 gsap.to('#technologies', {
   scrollTrigger: {
     trigger: '#technologies-text',
   },
   y: -300
 })
-
 
 const me = gsap.timeline({
   scrollTrigger: {
@@ -307,7 +327,6 @@ gsap.to('#me',{
   opacity: 1,
 })
 
-
 gsap.to('#svgmessage',{
   scrollTrigger: {
   trigger: '#section4',
@@ -317,7 +336,6 @@ gsap.to('#svgmessage',{
 opacity: '0',
 display: 'none'
 })
-
 
 gsap.to('#section4',{
   scrollTrigger: {
